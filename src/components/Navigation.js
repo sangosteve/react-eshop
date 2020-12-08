@@ -1,36 +1,35 @@
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
-} from "reactstrap";
+import "./Navigation.css"
+
 function Navigation() {
   return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">eShop</NavbarBrand>
-
-        <Nav className="mr-auto" navbar>
-          
-          <NavItem>
-            <NavLink href="/cart">Cart</NavLink>
-          </NavItem>
-        
-           <NavItem>
-            <NavLink href="/account">Account</NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar>
+    <div className="navigation-wrapper">
+     <navbar>
+       <ul>
+         <Link className="brand"  to="/">
+         <h2>Eshop</h2>
+         </Link>
+         <Link className="nav-link" to="/cart">
+         <li>Home</li>
+         </Link>
+         <Link className="nav-link" to="/cart">
+         <li>Product</li>
+         </Link>
+         <Link className="nav-link" to="/cart">
+         <li>Contact</li>
+         </Link>
+         <Link className="nav-link" to="/cart">
+         <li>About</li>
+         </Link>
+         <Link className="nav-link" to="/cart">
+         <li>Cart</li>
+         </Link>
+         <Link className="nav-link" to="/account">
+         <li>Account</li>
+         </Link>
+       </ul>
+     </navbar>
     </div>
   );
 }

@@ -9,7 +9,7 @@ function Home() {
     category:"",
     price: 0
   });
-  const [cart, setCart] = useState([
+  const [products, setProducts] = useState([
     {
       name:"Black Hoodie",
       image:"./images/hoodie.png",
@@ -39,16 +39,19 @@ function Home() {
   return (
     <div className="products-wrapper">
       {
-        cart.map(product=>(
+        products.map(product=>(
           <div className="product-card">
             <div className="img-wrapper">
             <img src={product.image}/>
             </div>
             <div className="product-description">
-            <span className="category">{product.category}</span>
-            <span className="name">{product.name}</span>
-            <span className="price">{product.price}</span>
+            <span className="category"><h5>{product.name}</h5></span>
+            <span className="name">${product.price}</span>
+            <span className="price">{product.category}</span>
             </div>
+
+            <button className="btn-add-to-cart">Add to cart</button>
+
           </div>
         ))
       }
