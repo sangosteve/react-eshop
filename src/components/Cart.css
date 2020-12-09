@@ -1,0 +1,29 @@
+.cart-wrapper{
+    margin-top: 50px;
+    padding: 5% 15% 0% 15%;
+}
+.product-wrapper{
+    width: 100%;
+    height: 250px;
+    
+}
+
+.table-cart{
+    
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product-name{
+    display: flex;
+    align-items: center;
+}
+
+.product-del:hover .btn-del{
+    cursor: pointer;
+}
+
+.product-name img{
+    height: 50px;
+    width: 50px;
+}
+
