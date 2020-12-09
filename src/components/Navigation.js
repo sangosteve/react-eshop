@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import {Link} from "react-router-dom";
+import {ProductsContext} from "./ProductsContext"
 import "./Navigation.css"
 
 function Navigation() {
+  const [products,setProducts] = useContext(ProductsContext);
   return (
     <div className="navigation-wrapper">
      <navbar>
@@ -10,7 +12,7 @@ function Navigation() {
          <Link className="brand"  to="/">
          <h2>Eshop</h2>
          </Link>
-         <Link className="nav-link" to="/cart">
+         <Link className="nav-link" to="/">
          <li>Home</li>
          </Link>
          <Link className="nav-link" to="/cart">
@@ -23,7 +25,7 @@ function Navigation() {
          <li>About</li>
          </Link>
          <Link className="nav-link" to="/cart">
-         <li>Cart</li>
+         <li>Cart {products.length}</li>
          </Link>
          <Link className="nav-link" to="/account">
          <li>Account</li>

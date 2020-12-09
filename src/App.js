@@ -4,10 +4,13 @@ import Home from "./components/Home";
 import Account from "./components/Account";
 import Cart from "./components/Cart";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {ProductsProvider} from './components/ProductsContext';
 import "./style.css";
 
 export default function App() {
+  
   return (
+    <ProductsProvider>
     <Router>
     <div className="App">
       <Navigation/>
@@ -16,5 +19,6 @@ export default function App() {
       <Route path="/account" component={Account}/>
     </div>
     </Router>
+    </ProductsProvider>
   );
 }

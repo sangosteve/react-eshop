@@ -1,41 +1,11 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
 import {Link} from "react-router-dom";
+import {ProductsContext} from './ProductsContext';
 import "./Home.css"
 
 function Home() {
-  const [product, setProduct] = useState({
-    name: "",
-    image:"",
-    category:"",
-    price: 0
-  });
-  const [products, setProducts] = useState([
-    {
-      name:"Black Hoodie",
-      image:"./images/hoodie.png",
-      category:"category",
-      price:230
-    },
-    {
-      name:"Black Hoodie",
-      image:"./images/watch.png",
-      category:"category",
-      price:129
-    },
-    {
-      name:"Black Hoodie",
-      image:"./images/shoe.png",
-      category:"category",
-      price:45
-    },
-    {
-      name:"Black Hoodie",
-      image:"./images/watch.png",
-      category:"category",
-      price:22
-    },
-    
-    ]);
+  const [products,setProducts] = useContext(ProductsContext);
+ 
   return (
     <div className="products-wrapper">
       {
