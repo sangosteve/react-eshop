@@ -7,8 +7,14 @@ import {Trash2} from 'react-feather';
 function Cart(){
     const [cart,setCart] = useContext(CartContext);
     const [cartTotal,setCartTotal] = useState(0)
+    const [productQty,setProdQty]=useState(0);
     function removeFromCart(productToRemove){
         setCart(cart.filter(product=>product!==productToRemove))
+    }
+
+    const increaseQty = (qty)=>{
+      qty=qty+1;
+      console.log(qty);
     }
     return(
         <div className="cart-wrapper">
@@ -19,6 +25,7 @@ function Cart(){
           <th></th>
           <th>Product</th>
           <th>Unit Price</th>
+          <th>Quantity</th>
         
         </tr>
       </thead>
@@ -37,7 +44,11 @@ function Cart(){
           <td>
             {product.price}        
           </td>
+          <td>
+            {product.units}        
+          </td>
           
+          <td><button onClick={()=>reduceQty(product.units)}>-</button>{product.units}<button onClick={()=>increaseQty(product.units)}>+</button></td>
          
         </tr>   
                 ))
