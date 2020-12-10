@@ -6,7 +6,6 @@ import {Trash2} from 'react-feather';
 
 function Cart(){
     const [cart,setCart] = useContext(CartContext);
-    const [cartTotal,setCartTotal] = useState(0)
     const [productQty,setProdQty]=useState(0);
     function removeFromCart(productToRemove){
         setCart(cart.filter(product=>product!==productToRemove))
